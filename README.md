@@ -1,3 +1,7 @@
+# Page
+https://jaehyunlee123.github.io/shangchi-timer/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
