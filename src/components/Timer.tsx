@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import Button from "./Button";
+import useSound from "use-sound";
+import beepsound from "../assets/beep-sound.mp3";
 
 const INITIAL_TURN = 3;
-const INITIAL_TIME = 60 * 3;
+const INITIAL_TIME = 13;
 const MIDDLE_TIME = 60;
+const MINIMUN_TIME = 30;
 
 type IntervalIdType = NodeJS.Timeout | string | number | undefined;
 
@@ -33,6 +35,7 @@ const useInterval = (intervalCallback: Function, intervalTime = 1000) => {
 };
 
 const Timer = ({ isTurn }: TimerProps) => {
+  const [playBeep] = useSound(beepsound);
   const [remainTurn, setRemainTurn] = useState(INITIAL_TURN);
   const [remainTime, setRemainTime] = useState(INITIAL_TIME);
   const { startInterval, stopInterval } = useInterval(() =>
@@ -42,12 +45,27 @@ const Timer = ({ isTurn }: TimerProps) => {
   useEffect(() => {
     if (isTurn) {
       startInterval();
+      if (0 < remainTime && remainTime < 10) playBeep();
+      if (remainTime < 0) {
+        setRemainTurn((prev) => prev - 1);
+        setRemainTime(MIDDLE_TIME);
+      }
+    } else {
+      if (remainTime < MINIMUN_TIME) setRemainTime(MINIMUN_TIME);
     }
     return stopInterval;
-  }, [isTurn, startInterval, stopInterval]);
+  }, [
+    isTurn,
+    startInterval,
+    stopInterval,
+    setRemainTime,
+    remainTime,
+    playBeep,
+  ]);
 
   return (
     <div>
+      <span>남은 초 읽기: {remainTurn}</span>
       <Time time={remainTime}></Time>
     </div>
   );

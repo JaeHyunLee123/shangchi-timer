@@ -7,6 +7,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="max-w-screen-md">
+      <App />
+    </div>
   </React.StrictMode>
 );
