@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/shangchi-timer/static/css/main.6b8e8740.css",
+    "main.js": "/shangchi-timer/static/js/main.81f24345.js",
+    "static/js/845.6f9d520e.chunk.js": "/shangchi-timer/static/js/845.6f9d520e.chunk.js",
+    "static/media/beep-sound.mp3": "/shangchi-timer/static/media/beep-sound.b4e3bf8a7697cf33f2e9.mp3",
+    "index.html": "/shangchi-timer/index.html",
+    "main.6b8e8740.css.map": "/shangchi-timer/static/css/main.6b8e8740.css.map",
+    "main.81f24345.js.map": "/shangchi-timer/static/js/main.81f24345.js.map",
+    "845.6f9d520e.chunk.js.map": "/shangchi-timer/static/js/845.6f9d520e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b8e8740.css",
+    "static/js/main.81f24345.js"
+  ]
+}
